@@ -20,7 +20,7 @@ img = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB)
 detector = MTCNN()
 result = detector.detect_faces(img)
 
-print(result)
+#print(result)
 
 x1, y1, width, height = result[0]['box']
 left_eye, right_eye = result[0]['keypoints']['left_eye'], result[0]['keypoints']['right_eye']
@@ -48,6 +48,6 @@ ax.add_patch(Circle(mouth_right, fill=True, color='red', radius=radius_size))
 ax.add_patch(Circle(nose, fill=True, color='red', radius=radius_size))
 
 ax.axis('off')
-#plt.savefig(parametros[0]+'''_marked.png''', pad_inches=0.1)
+plt.savefig('''images_marked/'''+parametros[0]+'''_marked.png''', pad_inches=0.1)
 
 plt.show()
